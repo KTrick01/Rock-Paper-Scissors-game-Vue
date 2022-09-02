@@ -10,7 +10,7 @@ function scoreAnimation() {
     scoreContainer.value.classList.add('rotate-vert-center')
     scoreContainer.value.addEventListener('animationend', function () {
         scoreContainer.value.classList.remove('rotate-vert-center')
-       
+
     })
 
 }
@@ -27,11 +27,15 @@ onMounted(() => {
 <template>
     <div class="score__area" ref="scoreComponent">
         <picture>
-            <img src="../images/logo-bonus.svg" alt="">
+
+            <a href="https://ktrick01.github.io/Rock-Paper-Scissors-game-Vue/">
+                <img src="../images/logo-bonus.svg" alt="">
+
+            </a>
         </picture>
 
         <div class="score__points" ref="scoreContainer">
-            <p class="score__word" >score</p>
+            <p class="score__word">score</p>
             <p class="score__num">{{ Score.score }}</p>
         </div>
     </div>
@@ -42,9 +46,11 @@ onMounted(() => {
 $Dark-Text: hsl(229, 25%, 31%);
 $Score-Text: hsl(229, 64%, 46%);
 $Header-Outline: hsl(217, 16%, 45%);
+
 .initAnimation {
-  animation: vanishUp .3s 1s forwards;
+    animation: vanishUp .3s 1s forwards;
 }
+
 @keyframes vanishUp {
     0% {
         transform: translateY(-100%);
@@ -56,6 +62,7 @@ $Header-Outline: hsl(217, 16%, 45%);
         opacity: 1;
     }
 }
+
 .rotate-vert-center {
     animation: rotate-vert-center 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }

@@ -7,13 +7,21 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/HomeView.vue')
+      component: () => import('../views/HomeView.vue'),
+      meta: { transition: 'slide-right' }
+
 
     },
     {
       path: '/game/:type',
       name: 'game',
-      component: () => import('../views/GameView.vue')
+      component: () => import('../views/GameView.vue'),
+      meta: { transition: 'slide-right' }
+
+    },
+    {
+      path: '',
+      component: () => import('../views/HomeView.vue')
 
     }
     
