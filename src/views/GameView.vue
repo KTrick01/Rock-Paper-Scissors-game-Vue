@@ -95,27 +95,27 @@ onMounted(function (params) {
             window.localStorage.setItem('score', `${Score.score}`)
 
         } else if (election == ScissorsButton && cpuElection == ScissorsButton) {
-            console.log("DRAW")
+            
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
         } else if (election == RockButton && cpuElection == RockButton) {
-            console.log("DRAW")
+            
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
         } else if (election == LizardButton && cpuElection == LizardButton) {
-            console.log("DRAW")
+            
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
         } else if (election == PaperButton && cpuElection == PaperButton) {
-            console.log("DRAW")
+            
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
         } else if (election == SpockButton && cpuElection == SpockButton) {
-            console.log("DRAW")
+            
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 

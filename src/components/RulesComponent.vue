@@ -17,7 +17,7 @@ function close() {
         <div class="Rules-con">
             <div class="Rules__header">
                 <h2>RULES</h2>
-                <button class="close-btn" ref="close" @click="close">
+                <button class="close-btn" @click="close">
                     <img src="../images/icon-close.svg" alt="">
                 </button>
             </div>
@@ -25,7 +25,7 @@ function close() {
             <picture class="Rules__img">
                 <img src="../images/image-rules-bonus.svg" alt="">
             </picture>
-            <button class="close-btn mobile" ref="close" @click="close">
+            <button class="close-btn mobile" @click="close">
                 <img src="../images/icon-close.svg" alt="">
             </button>
         </div>
