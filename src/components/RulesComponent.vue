@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 const rules = ref(null)
-
+const rulesBtnComponent = ref(null)
 function open() {
     rules.value.showModal()
 
@@ -10,7 +10,9 @@ function close() {
     rules.value.close()
 
 }
-
+onMounted(() => {
+    rulesBtnComponent.value.classList.add('initAnimation')
+})
 </script>
 <template>
     <dialog class="Rules" ref="rules">
@@ -31,12 +33,28 @@ function close() {
         </div>
 
     </dialog>
-    <div class="button-area">
+    <div class="button-area" ref="rulesBtnComponent"> 
         <button class="btn-rules" @click="open">RULES</button>
     </div>
 
 </template>
 <style scoped lang="scss">
+.initAnimation {
+    animation: vanishRight .3s 1s forwards;
+}
+
+@keyframes vanishRight {
+    0% {
+        transform: translate(100%, 100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
 .Rules {
     border: none;
     position: absolute;
@@ -79,6 +97,7 @@ function close() {
 }
 
 .button-area {
+    opacity: 0;
     display: flex;
     width: 100%;
     justify-content: flex-end;
@@ -113,6 +132,7 @@ function close() {
         transform: scale(1.1);
     }
 }
+
 .mobile {
     display: none;
 }
@@ -121,24 +141,30 @@ function close() {
     .button-area {
         justify-content: center;
     }
+
     .close-btn {
         display: none;
     }
+
     .close-btn.mobile {
         display: block;
         margin: 0 auto;
         max-width: 40px;
         height: 40px;
     }
+
     .Rules {
         width: 100%;
         height: 100%;
+
         &-con {
             justify-content: space-around;
         }
+
         &__img img {
             height: auto;
         }
+
         &__header {
             justify-content: center;
             font-size: 1.5rem;

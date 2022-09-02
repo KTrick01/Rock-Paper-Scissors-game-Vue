@@ -107,7 +107,7 @@ import ScissorsButton from '../components/ScissorsButton.vue';
 }
 
 .main-section {
-    animation: rotate-center .7s ease-out both;
+    animation: rotate-center 1s ease-out both;
     display: grid;
     width: 100%;
     max-width: 700px;
@@ -131,34 +131,34 @@ import ScissorsButton from '../components/ScissorsButton.vue';
 
 .scissors {
     transform: translateY(-100%);
-    animation: vanishUp .3s .7s forwards;
+    animation: vanishUp .3s 1s forwards;
     opacity: 0;
     grid-area: scissors;
 }
 
 .lizard {
-    animation: vanishDownL .3s .7s forwards;
+    animation: vanishDownL .3s .8s forwards;
     transform: translate(-100%, 100%);
     opacity: 0;
     grid-area: lizard;
 }
 
 .rock {
-    animation: vanishDownR .3s .7s forwards;
+    animation: vanishDownR .3s .6s forwards;
     transform: translate(100%, 100%);
     opacity: 0;
     grid-area: rock;
 }
 
 .spock {
-    animation: vanishRight .3s .7s forwards;
+    animation: vanishRight .3s .4s forwards;
     opacity: 0;
     transform: translate(-100%, -100%);
     grid-area: spock;
 }
 
 .paper {
-    animation: vanishLeft .3s .7s forwards;
+    animation: vanishLeft .3s .2s forwards;
     opacity: 0;
     transform: translate(100%, -100%);
     grid-area: paper;

@@ -4,6 +4,7 @@ import ScoreComponent from './components/ScoreComponent.vue';
 import RulesComponent from './components/RulesComponent.vue';
 import {useCounterStore} from '@/stores/counter.js'
 const Score = useCounterStore()
+
 Score.score = window.localStorage.getItem('score')
 if (Score.score === null || Score.score < 0) {
   Score.score = 0;
@@ -19,7 +20,7 @@ defineProps({
 
 <template>
   
-  <ScoreComponent class="scores"></ScoreComponent>
+  <ScoreComponent class="scores" ref="scoreComponent"></ScoreComponent>
   <div class="Main">
     <RouterView></RouterView>
   </div>

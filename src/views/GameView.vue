@@ -66,12 +66,15 @@ onMounted(function (params) {
             Score.score++
             window.localStorage.setItem('score', `${Score.score}`)
 
+
         } else if (election == PaperButton && cpuElection == RockButton || election == PaperButton && cpuElection == SpockButton) {
             msgContainer.value.classList.add('active')
             Score.score++
 
             myElect.value.classList.add('winner')
             window.localStorage.setItem('score', `${Score.score}`)
+
+
 
         } else if (election == RockButton && cpuElection == ScissorsButton || election == RockButton && cpuElection == LizardButton) {
             msgContainer.value.classList.add('active')
@@ -80,11 +83,15 @@ onMounted(function (params) {
             myElect.value.classList.add('winner')
             window.localStorage.setItem('score', `${Score.score}`)
 
+
+
         } else if (election == SpockButton && cpuElection == ScissorsButton || election == SpockButton && cpuElection == RockButton) {
             msgContainer.value.classList.add('active')
             Score.score++
 
             window.localStorage.setItem('score', `${Score.score}`)
+
+
 
             myElect.value.classList.add('winner')
         } else if (election == LizardButton && cpuElection == SpockButton || election == LizardButton && cpuElection == PaperButton) {
@@ -94,28 +101,30 @@ onMounted(function (params) {
             myElect.value.classList.add('winner')
             window.localStorage.setItem('score', `${Score.score}`)
 
+
+
         } else if (election == ScissorsButton && cpuElection == ScissorsButton) {
-            
+
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
         } else if (election == RockButton && cpuElection == RockButton) {
-            
+
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
         } else if (election == LizardButton && cpuElection == LizardButton) {
-            
+
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
         } else if (election == PaperButton && cpuElection == PaperButton) {
-            
+
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
         } else if (election == SpockButton && cpuElection == SpockButton) {
-            
+
             msgContainer.value.classList.add('active')
             message.value = "DRAW"
 
@@ -126,6 +135,9 @@ onMounted(function (params) {
             Score.score--
             test();
             window.localStorage.setItem('score', `${Score.score}`)
+
+
+
 
         }
 
@@ -154,8 +166,8 @@ onMounted(function (params) {
 
             <div class="btn">
                 <p class="game-p para">You picked</p>
-                <div ref="myElect">
-                    <component :is="election" />
+                <div ref="myElect" class="chi">
+                    <component :is="election" class="animationReset" />
 
                 </div>
 
@@ -183,6 +195,17 @@ onMounted(function (params) {
 </template>
 
 <style scoped lang="scss">
+
+.animationReset {
+    animation: none;
+    transform: translate(0);
+    opacity: 0;
+    animation: anima .5s forwards;
+
+}
+
+
+
 .lds-ripple {
     display: inline-block;
     position: absolute;
@@ -250,24 +273,19 @@ onMounted(function (params) {
 
 .cpu-animation {
     opacity: 0;
-    animation: anima .5s 1s forwards;
+    animation: anima-cpu .4s 1s forwards;
 }
 
-@keyframes test {
+
+@keyframes anima-cpu {
     0% {
-        transform: scale(1);
-    }
-
-    25% {
-        transform: scale(1.5);
-    }
-
-    50% {
-        transform: scale(1);
+        opacity: 0;
+        transform: scale(5);
     }
 
     100% {
-        transform: scale(1.5);
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -328,6 +346,7 @@ onMounted(function (params) {
     overflow: hidden;
     clip-path: circle(0% at 50% 50%);
     max-height: 0;
+    max-width: 0;
     visibility: hidden;
     opacity: 0;
     transform: translateY(100%) scale(2);
@@ -344,6 +363,7 @@ onMounted(function (params) {
         color: white;
         font-size: 3rem;
         letter-spacing: 5px;
+        width: max-content;
     }
 
     &-btn {
@@ -358,6 +378,7 @@ onMounted(function (params) {
         letter-spacing: 5px;
         border: none;
         color: inherit;
+        width: max-content;
 
         &:hover {
             color: white;
@@ -401,6 +422,7 @@ onMounted(function (params) {
 .active {
     visibility: visible;
     max-height: 100%;
+    max-width: 100%;
     opacity: 1;
     transform: translate(0) scale(1);
     clip-path: circle(100% at 50% 50%);
