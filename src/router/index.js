@@ -15,13 +15,8 @@ const router = createRouter({
       name: 'game',
       component: () => import('../views/GameView.vue')
 
-    },
-    {
-      path: '/:patchMach(.*)*',
-      name: 'NotFound',
-      component: () => import('../views/HomeView.vue')
-
     }
+    
   ]
 })
 
